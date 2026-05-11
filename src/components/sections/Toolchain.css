@@ -1,0 +1,85 @@
+.toolchain {
+  background: var(--bg-secondary);
+}
+
+.toolchain-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.tool-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.tool-item.visible {
+  animation: toolPop 0.5s ease forwards;
+}
+
+@keyframes toolPop {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.tool-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all var(--transition-base);
+}
+
+.tool-item:hover .tool-icon {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.tool-name {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.tool-item:hover .tool-name {
+  color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+  .toolchain-grid {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 16px;
+  }
+
+  .tool-icon {
+    width: 56px;
+    height: 56px;
+    font-size: 0.75rem;
+  }
+
+  .tool-name {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .toolchain-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
