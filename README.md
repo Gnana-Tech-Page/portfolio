@@ -164,6 +164,58 @@ Replace the LinkedIn profile photo URL in `Hero.jsx` with your own image URL or 
 
 Edit `src/styles/variables.css` to customize the color palette.
 
+## Troubleshooting
+
+If the site is down or showing a 404, follow these steps:
+
+### 1. Check GitHub Pages is enabled
+- Go to `https://github.com/Gnana-Tech-Page/portfolio/settings/pages`
+- Source should be: branch `gh-pages`, folder `/ (root)`
+- If disabled, re-enable and save
+
+### 2. Check the `gh-pages` branch exists
+```bash
+git fetch --all
+git branch -a   # should show remotes/origin/gh-pages
+```
+If missing, redeploy:
+```bash
+npm run deploy
+```
+
+### 3. Verify the build works locally
+```bash
+npm run build   # should complete with no errors
+```
+Fix any build errors, then redeploy.
+
+### 4. Check the base path in `vite.config.js`
+```js
+base: '/portfolio/',   // must match your repo name exactly
+```
+If the repo was renamed on GitHub, update this value to match.
+
+### 5. Re-deploy from scratch
+```bash
+npm run deploy
+```
+Wait 1–2 minutes, then visit `https://Gnana-Tech-Page.github.io/portfolio/`
+
+### 6. Check GitHub Actions for deploy errors
+- Go to `https://github.com/Gnana-Tech-Page/portfolio/actions`
+- Look for any failed workflow runs and review the logs
+
+### 7. Hard refresh the browser
+```
+Cmd + Shift + R   (Mac)
+Ctrl + Shift + R  (Windows)
+```
+Cached 404 pages can sometimes linger in the browser.
+
+---
+
+The most common causes are a missing `gh-pages` branch (step 2) or an incorrect base path (step 4). Running `npm run deploy` resolves both.
+
 ## Browser Support
 
 - Chrome (latest)
