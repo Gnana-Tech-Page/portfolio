@@ -175,8 +175,8 @@ If the site is down or showing a 404, follow these steps:
 
 ### 2. Check the `gh-pages` branch exists
 ```bash
-git fetch --all
-git branch -a   # should show remotes/origin/gh-pages
+git fetch --all   # no output is normal — means everything is up to date
+git branch -a     # should show remotes/origin/gh-pages
 ```
 If missing, redeploy:
 ```bash
