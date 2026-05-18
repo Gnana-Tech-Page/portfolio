@@ -16,8 +16,8 @@ export const skills = [
     icon: "Cloud",
     items: [
       { name: "Azure", level: 95 },
-      { name: "AWS", level: 80 },
-      { name: "GCP", level: 70 }
+      { name: "AWS", level: 60 },
+      { name: "GCP", level: 90 }
     ]
   },
   {
@@ -25,8 +25,8 @@ export const skills = [
     icon: "Code",
     items: [
       { name: "Terraform", level: 95 },
-      { name: "Bicep", level: 90 },
-      { name: "ARM Templates", level: 85 }
+      { name: "Bicep", level: 60 },
+      { name: "ARM Templates", level: 60 }
     ]
   },
   {
@@ -420,14 +420,14 @@ export const education = [
     id: 1,
     degree: "MS in Information Systems and Applications",
     institution: "University",
-    year: "2015",
+    year: "2005",
     description: "Advanced studies in information systems, cloud computing, and enterprise architecture."
   },
   {
     id: 2,
     degree: "Bachelor of Arts",
     institution: "Bharathidasan University",
-    year: "2003",
+    year: "1999",
     description: "Undergraduate degree providing strong foundation in analytical and communication skills."
   }
 ];
